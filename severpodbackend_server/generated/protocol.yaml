@@ -1,0 +1,5 @@
+artikool:
+  - getArticles:
+  - addArticle:
+  - updateArticle:
+  - deleteArticle:

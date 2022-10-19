@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:14.1
+    ports:
+      - '8090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: severpodbackend
+      POSTGRES_PASSWORD: "4a0Quk5UzBcWCQD8sfPMmOl9Kn8h_Irr"
+    volumes:
+      - severpodbackend_data:/var/lib/postgresql/data
+  redis:
+    image: redis:6.2.6
+    ports:
+      - '8091:6379'
+    command: redis-server --requirepass "pUuchuKUArVEweiCBFYeR9nHEf6FY_K2"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+volumes:
+  severpodbackend_data:
